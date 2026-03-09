@@ -12,15 +12,12 @@ public interface CursoRepository{
 
     public void crearCurso(Curso curso);
 
-    public void actviar(int id);
+    public void activar(int id);
 
     public void eliminarSiNombreContiene(String texto);
 
     List<Curso> listarPorEstado(boolean activo);
 
-    List<Curso> listarOrdenadoPor();
-
-
-
+    List<Curso> listarOrdenadoPor(String campo, String orden);
 
 }

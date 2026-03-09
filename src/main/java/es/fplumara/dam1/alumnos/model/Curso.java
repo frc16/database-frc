@@ -9,50 +9,44 @@ public class Curso {
     private boolean activo;
 
 
-   //constructor
-    public Curso(int id, String nombre,boolean activo) {
+    //constructor
+    public Curso(int id, String nombre, boolean activo) {
         this.id = id;
         this.nombre = nombre;
         this.activo = activo;
     }
 
-    public Curso(){
+    public Curso() {
 
     }
 
-   // getters and setters
+    // getters and setters
 
-        public int getId() {
-            return id;
-        }
+    public int getId() {
+        return id;
+    }
 
-        public void setId(int id) {
-            this.id = id;
-        }
+    public void setId(int id) {
+        this.id = id;
+    }
 
-        public boolean isEstado() {
-            return activo;
-        }
+    public boolean isEstado() {
+        return activo;
+    }
 
-        public void setEstado(boolean activo) {
-            this.activo = activo;
-        }
+    public void setEstado(boolean activo) {
+        this.activo = activo;
+    }
 
-        public String getNombre() {
-            return nombre;
-        }
+    public String getNombre() {
+        return nombre;
+    }
 
-        public void setNombre(String nombre) {
-            this.nombre = nombre;
-        }
-   //métodos
-
-public void crearCurso(int id, String nombre, boolean estado){
-        if()
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
 }
 
-public
-    }
 
 
 
