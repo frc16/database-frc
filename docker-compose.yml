@@ -1,37 +1,19 @@
 services:
-  postgres:
-    image: postgres:16
-    container_name: dam1-postgres
-    restart: unless-stopped
-    environment:
-      POSTGRES_DB: dam1
-      POSTGRES_USER: dam1
-      POSTGRES_PASSWORD: dam1pass
-    ports:
-      - "5432:5432"
-    volumes:
-      - dam1_pgdata:/var/lib/postgresql/data
 
   mysql:
     image: mysql:8.0
-    restart: always
+    container_name: dam1-mysql
+    restart: unless-stopped
     environment:
-      MYSQL_DATABASE: 'dam1'
-      # So you don't have to use root, but you can if you like
-      MYSQL_USER: 'dam1'
-      # You can use whatever password you like
-      MYSQL_PASSWORD: 'dam1'
-      # Password for root access
-      MYSQL_ROOT_PASSWORD: 'dam1'
+      MYSQL_DATABASE: dam1
+      MYSQL_USER: dam1
+      MYSQL_PASSWORD: dam1
+      MYSQL_ROOT_PASSWORD: dam1
     ports:
-
-      - 3309:3306
-    expose:
-      - '3306'
-
+      - "3309:3306"
     volumes:
-      - my-db:/var/lib/mysql
+      - dam1_mysqldata:/var/lib/mysql
+      - ./sql/init_mysql.sql:/docker-entrypoint-initdb.d/init.sql
 
 volumes:
-  my-db:
-  dam1_pgdata:
+  dam1_mysqldata:

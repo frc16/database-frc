@@ -12,6 +12,12 @@ public class Alumno {
 
     private Integer anioNacimiento;
 
+    public Alumno(String nombre, String apellidos, Integer anioNacimiento) {
+        this.nombre = nombre;
+        this.apellidos = apellidos;
+        this.anioNacimiento = anioNacimiento;
+    }
+
     public Alumno(Integer id, String nombre, String apellidos, Integer anioNacimiento) {
         this.id = id;
         this.nombre = nombre;
@@ -68,5 +74,9 @@ public class Alumno {
         if (year < 1926 || year > currentYear) {
             throw new IllegalArgumentException("El año de nacimiento debe estar entre 1926 y " + currentYear);
         }
+    }
+    @Override
+    public String toString() {
+        return "Alumno{id= " + id + "nombre= " + nombre + "apellidos= "+ apellidos + "anioNacimiento= " + anioNacimiento + "}";
     }
 }

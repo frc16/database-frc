@@ -25,25 +25,39 @@ public class Curso {
     public int getId() {
         return id;
     }
-
     public void setId(int id) {
         this.id = id;
     }
 
-    public boolean isEstado() {
+
+    public boolean isActivo() {
         return activo;
     }
-
-    public void setEstado(boolean activo) {
+    public void setaActivo(boolean activo) {
         this.activo = activo;
     }
 
     public String getNombre() {
         return nombre;
     }
-
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public void validar(){
+        if(nombre==null||nombre.isBlank()){
+            throw new IllegalArgumentException("el nombre del curso no puede estar en blanco");
+        }
+        if(nombre.length()>100){
+            throw new IllegalArgumentException("el nombre no puede ser superior a 100 caracteres");
+        }
+
+    }
+
+    @Override
+
+    public String toString (){
+        return "Curso{id= " + id + ", nombre='" + nombre + "'" + "activo= " + activo + "}";
     }
 }
 
